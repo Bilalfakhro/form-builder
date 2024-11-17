@@ -14,7 +14,7 @@ export const FieldSelector: React.FC<FieldSelectorProps> = ({
   addFormField,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start flex-wrap md:gap-y-4 gap-x-1 h-auto md:h-[70vh] overflow-y-auto">
+    <div className="flex flex-col md:flex-row items-center md:items-start flex-wrap gap-y-4 gap-x-1 md:h-[70vh] overflow-y-auto">
       {fieldTypes.map((variant) => (
         <div className="flex items-center gap-1" key={variant.name}>
           <Button

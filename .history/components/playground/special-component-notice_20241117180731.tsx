@@ -20,18 +20,17 @@ const SpecialComponentsNotice = ({
 
   return (
     <>
-      <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
+      <p className="text-sm text-muted-foreground">
         This form includes special components, add the component in your
         directory.
       </p>
-      <ul className="list-disc text-sm text-muted-foreground pl-3 md:pl-5 lg:pl-8">
+      <ul className="list-disc text-sm text-muted-foreground pl-3">
         {usedSpecialComponents.map((component) => (
-          <li key={component.variant} className="hover:shadow-lg transition-shadow duration-200">
+          <li key={component.variant}>
             <Link
               href={component.url}
               target="_blank"
               className="hover:underline"
-              aria-label={`Learn more about ${component.variant}`}
             >
               {component.variant}
             </Link>

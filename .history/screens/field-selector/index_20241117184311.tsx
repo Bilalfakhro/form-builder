@@ -14,21 +14,21 @@ export const FieldSelector: React.FC<FieldSelectorProps> = ({
   addFormField,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start flex-wrap md:gap-y-4 gap-x-1 h-auto md:h-[70vh] overflow-y-auto">
+    <div className="flex flex-row items-center md:items-start flex-wrap gap-3 h-[70vh] overflow-y-auto">
       {fieldTypes.map((variant) => (
         <div className="flex items-center gap-1" key={variant.name}>
           <Button
             key={variant.name}
             variant="outline"
             onClick={() => addFormField(variant.name, variant.index)}
-            className="rounded-full"
+            className="rounded-full hover:scale-105 transform transition-transform duration-200"
             size="sm"
           >
             {variant.name}
             <If
               condition={variant.isNew}
               render={() => (
-                <Badge variant={'new'} className='md:hidden ml-1 p-1 text-[10px]'>
+                <Badge variant={'new'} className='md:hidden ml-1 p-1 text-[10px] bg-gradient-to-r from-yellow-400 to-pink-500'>
                   New
                 </Badge>
               )}
@@ -37,7 +37,7 @@ export const FieldSelector: React.FC<FieldSelectorProps> = ({
           <If
             condition={variant.isNew}
             render={() => (
-              <Badge variant={'new'} className='hidden md:block ml-1 p-1 text-[10px]'>
+              <Badge variant={'new'} className='hidden md:block ml-1 p-1 text-[10px] bg-gradient-to-r from-yellow-400 to-pink-500'>
                 New
               </Badge>
             )}
